@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Bazer";
+  src: url("./assets/Bazer-K7vpp.ttf");
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom{
+  font-family: "Bazer";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.initialsContainer{
+  animation: animate1 infinite 1000ms 0ms alternate;
+}
+canvas{
+  width: 100vw !important;
+  height: 100vh !important;
+}
+@keyframes animate1 {
+  0%{
+   font-size: 136px;
+   text-shadow: #000000 10px 10px 100px;
+  }  
+  100%{
+    font-size:120px;
+   text-shadow:  #CA4943 10px 10px 100px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+::-webkit-scrollbar{
+  width: 5px;
+  height: 1vh;
 }
-
-.App-link {
-  color: #61dafb;
+::-webkit-scrollbar-thumb{
+  background-color: #CA4943;
+  border-radius: 10px;
+  width: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar-track{
+  width: 0px;
+  background-color: #111111;
+}
+::-webkit-scrollbar-track-piece{
+  width: 0px;
+  background-color: #111111;
 }
