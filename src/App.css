@@ -2,15 +2,24 @@
   font-family: "Bazer";
   src: url("./assets/Bazer-K7vpp.ttf");
 }
-.custom{
+*{
+  margin: 0;
+  padding: 0;
+}
+.App{
+  background-color: var(--black);
+  /* padding: 10px; */
+}
+@media (min-width:1440px) {
+  .heroSection{
+    padding: 30px 76px !important;
+  }
+}
+/* .custom{
   font-family: "Bazer";
 }
 .initialsContainer{
   animation: animate1 infinite 1000ms 0ms alternate;
-}
-canvas{
-  width: 100vw !important;
-  height: 100vh !important;
 }
 @keyframes animate1 {
   0%{
@@ -38,4 +47,105 @@ canvas{
 ::-webkit-scrollbar-track-piece{
   width: 0px;
   background-color: #111111;
+}
+.text-stroke-1{
+  -webkit-text-stroke: 1px #ffffff;
+  color: #ffffff00;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+:root{
+  --primary: #E84A4A;
+  --faint-primary:#e84a4a57;
+  --yellow:#7DFF68;
+  --black:#000003;
+}
+.yellow{
+  color:var(--yellow);
+}
+.red{
+  color:var(--primary);
+}
+.border-primary{
+  border-color: var(--primary) !important;
+}
+.bg-primary{
+  background-color: var(--primary) !important;
+}
+.hover-bg-primary:hover{
+  background-color: var(--primary) !important;
+}
+.hover-bg-primary:hover img{
+display: none;
+}
+.big-shoulders {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.iceland{
+  font-family: "Iceland", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.box {
+  position: relative;
+  /* width: 200px;
+  height: 200px;
+  margin: 50px; */
+}
+.box-hover:hover{
+  transition: 500ms;
+  box-shadow: 0px 0px 500px 5px var(--primary);
+  scale: 1.1;
+}
+.custom-height{
+  height: calc(100vh - 8.6rem) !important;
+  background-image: url(../src/assets/hero-large.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E84A4A;
+}
+
+/* Top-left corner */
+.box::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Bottom-right corner */
+.box::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Additional corners can be added like this */
+
+/* Top-right corner */
+.box::before:nth-of-type(2) {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Bottom-left corner */
+.box::after:nth-of-type(2) {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
 }
