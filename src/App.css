@@ -5,6 +5,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 .App{
   background-color: var(--black);
@@ -61,12 +62,20 @@
   --faint-primary:#e84a4a57;
   --yellow:#7DFF68;
   --black:#000003;
+  --primary-transparent: #e84a4ab3;
+  --primary-trans-2:#e84a4a1a;
 }
 .yellow{
   color:var(--yellow);
 }
 .red{
   color:var(--primary);
+}
+.bg-primary-trans{
+  background-color: var(--primary-transparent);
+}
+.bg-primary-2{
+  background-color: var(--primary-trans-2);
 }
 .border-primary{
   border-color: var(--primary) !important;
@@ -106,6 +115,10 @@ display: none;
   background-image: url(../src/assets/hero-large.webp);
   background-size: cover;
   background-position: center center;
+}
+.custom-height:last-child
+{
+  background-image: none !important;
 }
 .box::before,
 .box::after {

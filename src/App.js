@@ -1,4 +1,5 @@
 import './App.css';
+import NavBar from './components/NavBar';
 import {HeroSection} from './pages/HeroSection';
 import AnimatedCursor from 'react-animated-cursor';
 // import { LoadingScreen } from './components/LoadingScreen';
@@ -23,6 +24,7 @@ function App() {
       <HeroSection/>
       <SkillSection/> */}
       <HeroSection/>
+      <NavBar/>
     </div>
   );
 }
