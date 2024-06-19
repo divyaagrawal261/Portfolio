@@ -1,5 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
+import VisualSettings from './components/VisualSettings';
+import {Route, Routes} from "react-router-dom";
 import {HeroSection} from './pages/HeroSection';
 import AnimatedCursor from 'react-animated-cursor';
 // import { LoadingScreen } from './components/LoadingScreen';
@@ -20,11 +22,10 @@ function App() {
   outerStyle={{
     border: '3px solid #e84a4a57'
   }}/>
-      {/* <LoadingScreen/>
-      <HeroSection/>
-      <SkillSection/> */}
-      <HeroSection/>
-      <NavBar/>
+      <Routes>
+      <Route path="/" element={<HeroSection/>}/>
+      <Route path="/visual" element={<VisualSettings/>}/>
+      </Routes>
     </div>
   );
 }

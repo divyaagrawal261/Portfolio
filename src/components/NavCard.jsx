@@ -7,7 +7,7 @@ const NavCard = ({title}) => {
             <span className="text-lg font-bold tracking-wider">{title}</span>
             <svg
               fill="#000000"
-              fill-opacity="0.7"
+              fillOpacity="0.7"
               height="600%"
               width="40"
               version="1.1"
