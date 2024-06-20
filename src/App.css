@@ -16,6 +16,12 @@
     padding: 30px 76px !important;
   }
 }
+body{
+  background-color: var(--black);
+  overflow-x: hidden;
+  /* max-height: 100vh; */
+  /* overflow-y: hidden; */
+}
 /* .custom{
   font-family: "Bazer";
 }
@@ -62,8 +68,12 @@
   --faint-primary:#e84a4a57;
   --yellow:#7DFF68;
   --black:#000003;
+  --grey:#242423;
   --primary-transparent: #e84a4ab3;
   --primary-trans-2:#e84a4a1a;
+}
+.inactive{
+  background-color: var(--grey);
 }
 .yellow{
   color:var(--yellow);

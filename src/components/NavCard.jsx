@@ -1,9 +1,9 @@
 import React from 'react'
 
-const NavCard = ({title}) => {
+const NavCard = ({title, active}) => {
   return (
     <div className='w-fit border-l-2 border-primary'>
-        <div className="bg-primary-trans text-slate-200 flex justify-between h-6 items-center big-shoulders p-1 overflow-hidden w-full xl:w-[196px] lg:w-[196px]">
+        <div className={` text-slate-200 flex justify-between h-6 items-center big-shoulders p-1 overflow-hidden w-full xl:w-[196px] lg:w-[196px] ${active? 'bg-primary-trans':'inactive'}`}>
             <span className="text-lg font-bold tracking-wider">{title}</span>
             <svg
               fill="#000000"
