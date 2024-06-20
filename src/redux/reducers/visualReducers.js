@@ -1,5 +1,5 @@
 const reducer = (state=false, action)=>{
-    if(action.type=="VisualVisibility")
+    if(action.type==="VisualVisibility")
     return !(action.payload)
 }
 

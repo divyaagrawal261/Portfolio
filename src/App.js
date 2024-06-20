@@ -1,9 +1,8 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import VisualSettings from './components/VisualSettings';
 import {Route, Routes} from "react-router-dom";
 import {HeroSection} from './pages/HeroSection';
 import AnimatedCursor from 'react-animated-cursor';
+import { Projects } from './pages/Projects';
 // import { LoadingScreen } from './components/LoadingScreen';
 // import SkillSection from './components/SkillSection';
 
@@ -24,7 +23,7 @@ function App() {
   }}/>
       <Routes>
       <Route path="/" element={<HeroSection/>}/>
-      <Route path="/visual" element={<VisualSettings/>}/>
+      <Route path="/projects" element={<Projects/>}/>
       </Routes>
     </div>
   );
