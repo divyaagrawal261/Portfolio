@@ -1,12 +1,13 @@
 import React from "react";
 import ProjectsCard from "./ProjectsCard";
 import {Swiper, SwiperSlide} from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import ExperienceCard from "./ExperienceCard";
 
 export const MidSection = () =>{
     return(
@@ -19,6 +20,17 @@ export const MidSection = () =>{
 }
 
 export const ProjectsContainer = () =>{
+
+  const projects=[
+    {
+      title:"PROJECT NAME",
+      desc:"The quick brown fox jumped over the lazy dog",
+      image:"",
+      date:"",
+      detail:"",
+      demo:""
+    }
+  ]
   
   return(
     <div className="custom-height-without-bg box w-full  box-border">
@@ -28,21 +40,37 @@ export const ProjectsContainer = () =>{
         <Swiper modules={[Navigation, Pagination, Scrollbar]}
       slidesPerView={3}
       spaceBetween={10}
-      navigation
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      navigation={true}
       loop={true}
-      className="w-[60vw] bg-black">
+      className="w-[60vw] bg-transparent">
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          {/* <SwiperSlide className=""><ProjectsCard/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard/></SwiperSlide> */}
         </Swiper>
       </div>
+    </div>
+  </div>
+  )
+}
+
+export const ExperienceContainer = () =>{
+  return(
+    <div className="custom-height-without-bg box w-full  box-border">
+    <div className="innerBox border border-[#ffffff38] h-full p-3 bg-black">
+    <h2 className="text-white text-center iceland my-2 mb-4">EXPERIENCE</h2>
+    <Swiper modules={[Navigation, Pagination, Scrollbar]}
+      slidesPerView={1.2}
+      spaceBetween={0}
+      navigation={true}
+      loop={true}
+      className="w-[60vw] bg-transparent">
+        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
+        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
+        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
+        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
+        </Swiper>
     </div>
   </div>
   )

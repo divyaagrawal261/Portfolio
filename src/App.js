@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import {HeroSection} from './pages/HeroSection';
 import AnimatedCursor from 'react-animated-cursor';
 import { Projects } from './pages/Projects';
+import { Experience } from './pages/Experience';
 // import { LoadingScreen } from './components/LoadingScreen';
 // import SkillSection from './components/SkillSection';
 
@@ -24,6 +25,7 @@ function App() {
       <Routes>
       <Route path="/" element={<HeroSection/>}/>
       <Route path="/projects" element={<Projects/>}/>
+      <Route path="/experience" element={<Experience/>}/>
       </Routes>
     </div>
   );
