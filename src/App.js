@@ -10,7 +10,7 @@ import { Skills } from './pages/Skills';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App box-border">
       <AnimatedCursor innerSize={10}
   outerSize={20}
   innerScale={1}

@@ -9,11 +9,13 @@
 }
 .App{
   background-color: var(--black);
-  /* padding: 10px; */
 }
 @media (min-width:1440px) {
-  .heroSection{
+  .HERO{
     padding: 30px 76px !important;
+  }
+  .innerHeroSection{
+    padding: none !important;
   }
 }
 body{
@@ -249,4 +251,17 @@ font-size: 12px !important;
 .skillCard:hover > .title{
   transition: transform 0.1s;
   transform: translateZ(500px);
+}
+::selection {
+  background: var(--primary); /* Change background color to red */
+  color: white;    /* Optionally, change text color to white */
+}
+::-webkit-selection {
+  background: var(--primary); /* Change background color to red */
+  color: white;    /* Optionally, change text color to white */
+}
+
+::-moz-selection {
+  background: var(--primary); /* Change background color to red */
+  color: white;    /* Optionally, change text color to white */
 }

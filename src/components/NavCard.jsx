@@ -3,7 +3,7 @@ import React from 'react'
 const NavCard = ({title, active}) => {
   return (
     <div className='w-fit border-l-2 border-primary'>
-        <div className={` text-slate-200 flex justify-between h-6 items-center big-shoulders p-1 overflow-hidden w-full xl:w-[196px] lg:w-[196px] ${active? 'bg-primary-trans':'inactive'}`}>
+        <div className={` text-slate-200 flex justify-between h-6 items-center big-shoulders p-1 overflow-hidden w-full xl:w-[196px] lg:w-[120px] ${active? 'bg-primary-trans':'inactive'}`}>
             <span className="text-lg font-bold tracking-wider">{title}</span>
             <svg
               fill="#000000"
@@ -34,8 +34,8 @@ const NavCard = ({title, active}) => {
               </g>
             </svg>
           </div>
-          <div className="bg-primary-2 text-slate-500 flex justify-between h-6 items-center iceland p-1 overflow-hidden w-full xl:w-[196px] lg:w-[196px]">
-            <span className="text-lg">THE REACT SKILL-UP LINE</span>
+          <div className="bg-primary-2 text-slate-500 flex justify-between h-6 items-center iceland p-1 overflow-hidden w-full xl:w-[196px] lg:w-[120px]">
+            <span className="text-lg">TAB</span>
           </div>
     </div>
   )

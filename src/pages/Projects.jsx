@@ -24,9 +24,9 @@ export const Projects = () => {
   return (
     <>
     {visible && <VisualSettings/>}
-    <div className="HERO">
-    <div className="heroSection">
-    <div className="min-h-[100vh] lg:px-[15px] lg:py-[27px] ">
+    <div className="HERO box-border h-screen">
+    <div className="heroSection box-border h-full">
+    <div className="innerHeroSection lg:px-[15px] lg:py-[27px] xl:px-[15px] xl:py-[27px] box-border h-full">
       <Header/>
       <div className="flex gap-4 items-start">
         <LeftSide/>
@@ -34,7 +34,7 @@ export const Projects = () => {
         <RightSide/>
       </div>
     </div>
-    <NavBar/>
+    <NavBar page="projects"/>
     </div>
     </div>
     </>
