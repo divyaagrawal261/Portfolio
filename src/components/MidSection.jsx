@@ -82,7 +82,7 @@ export const SkillsContainer = () =>{
     <div className="custom-height-without-bg box w-full  box-border">
     <div className="innerBox border border-[#ffffff38] h-full p-3 bpx-border">
     <h2 className="text-white text-center iceland my-2 mb-4">SKILLS</h2>
-    <div className="skillsContainer flex flex-wrap gap-2 p-10 overflow-y-scroll h-fit max-h-[80%] box-border">
+    <div className="skillsContainer flex flex-wrap gap-2 lg:p-10 overflow-y-scroll h-fit max-h-[80%] box-border">
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" title="HTML"/>
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" title="CSS"/>
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" title="C"/>

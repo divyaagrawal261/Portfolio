@@ -10,11 +10,11 @@ function SkillCard({title, src}) {
         perspective={1000}
         glareColor='blue'
         glareMaxOpacity={0.2}
-            className="w-[120px] h-[120px] text-white aspect-square border-slate-900 border skillCard flex justify-center"
+            className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] text-white aspect-square border-slate-900 border skillCard flex justify-center"
         >
-            <div className="inner-Card w-[120px] aspect-square h-[120px] p-2 flex justify-center flex-col items-center">
+            <div className="inner-Card w-[90px] h-[90px] md:w-[120px] aspect-square md:h-[120px] md:p-2 p-0 flex justify-center flex-col items-center">
             <div className="title iceland text-2xl">{title}</div>
-            <img src={src} alt="" className='h-[80px]'/>
+            <img src={src} alt="" className='md:h-[80px] h-[50px]'/>
             </div>
         </Tilt>
     );
