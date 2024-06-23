@@ -37,13 +37,27 @@ export const ProjectsContainer = () =>{
     <div className="custom-height-without-bg box w-full  box-border">
     <div className="innerBox border border-[#ffffff38] h-full p-3">
       <h2 className="text-white text-center iceland my-2 mb-4">PROJECTS</h2>
-      <div className="projectsContainer text-white w-full ">
+      <div className="projectsContainer text-white w-full sm:block hidden">
         <Swiper modules={[Navigation, Pagination, Scrollbar]}
       slidesPerView={3}
       spaceBetween={10}
       navigation={true}
       loop={true}
-      className="w-[60vw] bg-transparent">
+      className="md:w-[60vw] sm:w-[80vw] bg-transparent">
+          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="projectsContainer text-white w-full sm:hidden">
+        <Swiper modules={[Navigation, Pagination, Scrollbar]}
+      slidesPerView={1.2}
+      spaceBetween={10}
+      navigation={true}
+      loop={true}
+      className="w-[80vw] bg-transparent">
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
           <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
