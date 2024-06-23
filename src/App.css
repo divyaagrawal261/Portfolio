@@ -48,6 +48,13 @@
     scale:1 !important;
     border:none !important;
   }
+  .custom-height-without-bg-projects{
+    aspect-ratio: 16/9 !important;
+    width: 100% !important;
+    max-height: 65vh !important;
+    height:fit-content !important ;
+    background-image: linear-gradient(to right,var(--black),var(--primary-trans-2), var(--black));
+  }
 }
 body{
   background-color: var(--black);
@@ -160,6 +167,10 @@ display: none;
   background-position: center center;
 }
 .custom-height-without-bg{
+  height: calc(100vh - 8.6rem) !important;
+  background-image: linear-gradient(to right,var(--black),var(--primary-trans-2), var(--black));
+}
+.custom-height-without-bg-projects{
   height: calc(100vh - 8.6rem) !important;
   background-image: linear-gradient(to right,var(--black),var(--primary-trans-2), var(--black));
 }

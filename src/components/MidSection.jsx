@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ExperienceCard from "./ExperienceCard";
 import SkillCard from "./SkillCard";
+import { experiences, projects} from "../constants";
 
 export const MidSection = () =>{
     return(
@@ -22,19 +23,8 @@ export const MidSection = () =>{
 
 export const ProjectsContainer = () =>{
 
-  const projects=[
-    {
-      title:"PROJECT NAME",
-      desc:"The quick brown fox jumped over the lazy dog",
-      image:"",
-      date:"",
-      detail:"",
-      demo:""
-    }
-  ]
-  
   return(
-    <div className="custom-height-without-bg box w-full  box-border">
+    <div className="custom-height-without-bg-projects box w-full  box-border">
     <div className="innerBox border border-[#ffffff38] h-full p-3">
       <h2 className="text-white text-center iceland my-2 mb-4">PROJECTS</h2>
       <div className="projectsContainer text-white w-full sm:block hidden">
@@ -44,11 +34,7 @@ export const ProjectsContainer = () =>{
       navigation={true}
       loop={true}
       className="md:w-[60vw] sm:w-[80vw] bg-transparent">
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          {projects.map(({title, desc, detail, demo, date, image})=><SwiperSlide><ProjectsCard title={title} desc={desc} detail={detail} demo={demo} date={date} image={image} /></SwiperSlide>)}
         </Swiper>
       </div>
       <div className="projectsContainer text-white w-full sm:hidden">
@@ -58,11 +44,7 @@ export const ProjectsContainer = () =>{
       navigation={true}
       loop={true}
       className="w-[80vw] bg-transparent">
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
-          <SwiperSlide className=""><ProjectsCard title={"TITLE"}/></SwiperSlide>
+          {projects.map(({title, desc, detail, demo, date, image})=><SwiperSlide><ProjectsCard title={title} desc={desc} detail={detail} demo={demo} date={date} image={image} /></SwiperSlide>)}
         </Swiper>
       </div>
     </div>
@@ -81,10 +63,7 @@ export const ExperienceContainer = () =>{
       navigation={true}
       loop={true}
       className="w-[80vw] sm:w-[60vw] bg-transparent">
-        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
-        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
-        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
-        <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
+        {experiences.map(({role, company, tenure})=><SwiperSlide><ExperienceCard tenure={tenure} role={role} company={company}/></SwiperSlide>)}
         </Swiper>
     </div>
   </div>

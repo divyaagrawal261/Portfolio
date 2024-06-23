@@ -45,6 +45,9 @@ export const LeftSide = () =>{
               <h1 className="text-xl">LINKEDIN</h1>
               <img src={LinkedIn} alt="LinkedIn Logo" className="h-6" />
             </a>
+            <a href="https://github.com/divyaagrawal261" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
+              <h1 className="text-xl">RESUME</h1>
+            </a>
           </div>
         </div>
         <div className="flex md:flex-col md:w-fit w-full sm:hidden">
@@ -88,6 +91,9 @@ export const LeftSide = () =>{
             <a href="https://github.com/divyaagrawal261" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
               <h1 className="text-xl">LINKEDIN</h1>
               <img src={LinkedIn} alt="LinkedIn Logo" className="h-6" />
+            </a>
+            <a href="https://github.com/divyaagrawal261" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
+              <h1 className="text-xl">RESUME</h1>
             </a>
           </div>
         </div>
