@@ -26,7 +26,7 @@ export const Skills = () => {
     {visible && <VisualSettings/>}
     <div className="HERO box-border h-screen">
     <div className="heroSection box-border h-full">
-    <div className="innerHeroSection lg:px-[15px] lg:py-[27px] xl:px-[15px] xl:py-[27px] box-border h-full">
+    <div className="innerHeroSection px-5 py-5 lg:px-[15px] lg:py-[27px] xl:px-[15px] xl:py-[27px] box-border h-full">
       <Header/>
       <div className="flex gap-4 items-start">
         <LeftSide/>

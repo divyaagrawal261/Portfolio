@@ -18,6 +18,16 @@
     padding: none !important;
   }
 }
+@media (max-width: 768px) {
+  .custom-height{
+    /* height:500px; */
+    aspect-ratio: 16/9 !important;
+    width: 100% !important;
+    max-height: 50vw !important;
+    /* max-height: calc(100vh- 40rem); */
+  }
+  
+}
 body{
   background-color: var(--black);
   /* overflow-x: hidden; */

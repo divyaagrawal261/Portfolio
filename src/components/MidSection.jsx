@@ -12,9 +12,9 @@ import SkillCard from "./SkillCard";
 
 export const MidSection = () =>{
     return(
-        <div className="custom-height box w-full">
-          <div className="innerBox border border-[#ffffff38] h-full">
-            <p className="text-white w-[450px] mx-auto mt-4 iceland leading-none text-lg">SWIMMING THROUGH A VAST NETWORK OF INTERCONNECTED DEVICES AND SERVERS, SPREADING JOY AND WHIMSY TO USERS ACROSS THE GLOBE</p>
+        <div className="custom-height box lg:w-full w-full ">
+          <div className="innerBox border border-[#ffffff38] h-full w-full sm:p-0 p-4">
+            <p className="text-white sm:w-[450px] w-full mx-auto mt-4 iceland leading-none sm:text-lg text-[16px]">SWIMMING THROUGH A VAST NETWORK OF INTERCONNECTED DEVICES AND SERVERS, SPREADING JOY AND WHIMSY TO USERS ACROSS THE GLOBE</p>
           </div>
         </div>
     )
@@ -80,12 +80,16 @@ export const ExperienceContainer = () =>{
 export const SkillsContainer = () =>{
   return(
     <div className="custom-height-without-bg box w-full  box-border">
-    <div className="innerBox border border-[#ffffff38] h-full p-3">
+    <div className="innerBox border border-[#ffffff38] h-full p-3 bpx-border">
     <h2 className="text-white text-center iceland my-2 mb-4">SKILLS</h2>
-    <div className="skillsContainer flex flex-wrap gap-2 justify-start p-10 overflow-scroll">
+    <div className="skillsContainer flex flex-wrap gap-2 p-10 overflow-y-scroll h-fit max-h-[80%] box-border">
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" title="HTML"/>
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" title="CSS"/>
       <SkillCard src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" title="C"/>
+      <SkillCard/>
+      <SkillCard/>
+      <SkillCard/>
+      <SkillCard/>
       <SkillCard/>
       <SkillCard/>
       <SkillCard/>
