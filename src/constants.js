@@ -29,7 +29,7 @@ export const projects = [
         image:Portfolio,
         date:"Jun 23, 2024",
         detail:"https://github.com/divyaagrawal261/Corporate-Thaali",
-        demo:"https://corporate-thaali.netlify.app/"
+        demo:"https://divya-agrawal.vercel.app/"
     },
     {
         title:"CORPORATE THAALI",
