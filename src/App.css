@@ -279,6 +279,7 @@ font-size: 12px !important;
 .skillCard:hover{
   scale:1.2;
   border:none !important;
+  z-index: 20;
 }
 .inner-Card{
   position: inherit;
@@ -306,4 +307,12 @@ font-size: 12px !important;
 ::-moz-selection {
   background: var(--primary); /* Change background color to red */
   color: white;    /* Optionally, change text color to white */
+}
+::-webkit-scrollbar{
+  width: 3px !important;
+  background-color: var(--black);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--primary);
+  border-radius: 500px;
 }
