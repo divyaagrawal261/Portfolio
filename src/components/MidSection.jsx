@@ -58,15 +58,15 @@ export const ProjectsContainer = () =>{
 
 export const ExperienceContainer = () =>{
   return(
-    <div className="custom-height-without-bg box w-full  box-border">
-    <div className="innerBox border border-[#ffffff38] h-full p-3 bg-black">
+    <div className="custom-height-without-bg box w-full box-border">
+    <div className="innerBox border border-[#ffffff38] h-full sm:p-3 p-1 bg-black">
     <h2 className="text-white text-center iceland my-2 mb-4">EXPERIENCE</h2>
     <Swiper modules={[Navigation, Pagination, Scrollbar]}
       slidesPerView={1.2}
       spaceBetween={0}
       navigation={true}
       loop={true}
-      className="w-[60vw] bg-transparent">
+      className="w-[80vw] sm:w-[60vw] bg-transparent">
         <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
         <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>
         <SwiperSlide className=""><ExperienceCard role={"WEB DEVELOPER"} company={"COMPANY NAME"} tenure={"TENURE"}/></SwiperSlide>

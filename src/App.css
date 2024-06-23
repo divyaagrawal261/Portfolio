@@ -26,7 +26,12 @@
     max-height: 50vw !important;
     /* max-height: calc(100vh- 40rem); */
   }
-  
+  .custom-height-without-bg{
+    aspect-ratio: 16/9 !important;
+    width: 100% !important;
+    max-height: 70vw !important;
+    background-image: linear-gradient(to right,var(--black),var(--primary-trans-2), var(--black));
+  }
 }
 body{
   background-color: var(--black);
