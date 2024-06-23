@@ -28,7 +28,7 @@ export const projects = [
         desc:"An interactive portfolio website listing my skills and projects along with my work experience and other relevant links.",
         image:Portfolio,
         date:"Jun 23, 2024",
-        detail:"https://github.com/divyaagrawal261/Corporate-Thaali",
+        detail:"https://github.com/divyaagrawal261/Portfolio",
         demo:"https://divya-agrawal.vercel.app/"
     },
     {
