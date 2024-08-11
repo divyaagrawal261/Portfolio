@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.dc72a14d.css",
+    "main.js": "/Portfolio/static/js/main.f80e040d.js",
+    "static/media/skyCast.png": "/Portfolio/static/media/skyCast.7bb796d54c5267b0d57e.png",
+    "static/media/bunny_bucket.png": "/Portfolio/static/media/bunny_bucket.b121a9a832e404b2721e.png",
+    "static/media/DailyPulse.png": "/Portfolio/static/media/DailyPulse.e9a8f2ff0fdb396bb7ba.png",
+    "static/media/Repo_Page.png": "/Portfolio/static/media/Repo_Page.f8a0fb1e8d714d30432c.png",
+    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.d8f0ae0fca7ec1dd75ae.png",
+    "static/media/CorporateThaali.png": "/Portfolio/static/media/CorporateThaali.75b91628a717d89c3b5c.png",
+    "static/media/placeholder2.png": "/Portfolio/static/media/placeholder2.7d4114d6b2211ca9bca3.png",
+    "static/media/hero-large.webp": "/Portfolio/static/media/hero-large.7811fe3f941ca7886663.webp",
+    "static/media/Bazer-K7vpp.ttf": "/Portfolio/static/media/Bazer-K7vpp.4788faa88cef8f8c8440.ttf",
+    "index.html": "/Portfolio/index.html",
+    "main.dc72a14d.css.map": "/Portfolio/static/css/main.dc72a14d.css.map",
+    "main.f80e040d.js.map": "/Portfolio/static/js/main.f80e040d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc72a14d.css",
+    "static/js/main.f80e040d.js"
+  ]
+}
