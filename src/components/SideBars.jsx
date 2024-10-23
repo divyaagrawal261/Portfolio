@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Tilt from "react-parallax-tilt";
 import Github from "../assets/github.png";
 import LinkedIn from "../assets/linkedin.png";
@@ -6,100 +6,73 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "../redux/index";
 
-export const LeftSide = () =>{
-     return(
-      <>
-        <div className="sm:flex md:flex-col md:w-fit w-full hidden">
-          <Tilt
-            glareEnable={true}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            glareMaxOpacity={0.3}
-            glareColor="blue"
-            className="box box-hover aspect-square lg:h-[120px] xl:h-[196px]"
-          >
-            <div className="innerBox border border-[#ffffff38] h-full">
-              <div className="h-full p-2">
-                <img
-                  src="https://media.licdn.com/dms/image/D4D03AQHnFQgz7KL-Ew/profile-displayphoto-shrink_200_200/0/1676355303240?e=1724284800&v=beta&t=zxnPJ4qatS8ws2gx3bHPF4-_RXjTGRYXX4dtqPlGZwY"
-                  alt="Profile"
-                />
-              </div>
-            </div>
-          </Tilt>
-          <div className="detailsContainer flex flex-col sm:w-1/2 md:w-full">
-            <h2 className="iceland text-slate-300 text-lg">NAME</h2>
-            <h1 className="big-shoulders red text-xl font-bold">DIVYA AGRAWAL</h1>
-            <h2 className="iceland text-slate-300 text-lg">OCCUPATION</h2>
-            <h1 className="big-shoulders red text-xl font-bold">WEB DEVELOPER</h1>
-            <h2 className="iceland text-slate-300 text-lg">LINKS</h2>
-            <a
-              href="https://github.com/divyaagrawal261"
-              className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit hover:text-black hover-bg-primary"
-            >
-              <h1 className="text-xl">GITHUB</h1>
-              <img src={Github} alt="Github Logo" className="h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/divya-agrawal-3b710825a/" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
-              <h1 className="text-xl">LINKEDIN</h1>
-              <img src={LinkedIn} alt="LinkedIn Logo" className="h-6" />
-            </a>
-            <a href="https://drive.google.com/file/d/1v7O_DXTSl-AtcAi4LPgEV5a4Jxhs0BMZ/view" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
-              <h1 className="text-xl">RESUME</h1>
-            </a>
+export const LeftSide = () => {
+  const [avatarURL, setAvatarURL] = useState("");
+
+  useEffect(() => {
+    const fetchAvatar = async () => {
+      try {
+        const response = await fetch("https://api.github.com/users/divyaagrawal261");
+        const data = await response.json();
+        setAvatarURL(data.avatar_url);
+      } catch (error) {
+        console.error("Error fetching avatar:", error);
+      }
+    };
+
+    fetchAvatar(); 
+  }, []);
+
+  return (
+    <div className="sm:flex md:flex-col md:w-fit w-full hidden">
+      <Tilt
+        glareEnable={true}
+        tiltMaxAngleX={20}
+        tiltMaxAngleY={20}
+        perspective={1000}
+        glareMaxOpacity={0.3}
+        glareColor="blue"
+        className="box box-hover aspect-square lg:h-[120px] xl:h-[196px]"
+      >
+        <div className="innerBox border border-[#ffffff38] h-full">
+          <div className="h-full p-2">
+            <img
+              src={avatarURL}
+              alt="Profile"
+            />
           </div>
         </div>
-        <div className="flex md:flex-col md:w-fit w-full sm:hidden">
-          <Tilt
-            glareEnable={true}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            glareMaxOpacity={0.3}
-            glareColor="blue"
-            className="box box-hover aspect-square lg:h-[120px] xl:h-[196px]"
-          >
-            <div className="innerBox border border-[#ffffff38] h-full">
-              <div className="h-full p-2">
-                <img
-                  src="https://media.licdn.com/dms/image/D4D03AQHnFQgz7KL-Ew/profile-displayphoto-shrink_200_200/0/1676355303240?e=1724284800&v=beta&t=zxnPJ4qatS8ws2gx3bHPF4-_RXjTGRYXX4dtqPlGZwY"
-                  alt="Profile"
-                />
-              </div>
-            </div>
-          </Tilt>
-          <div className="detailsContainer flex flex-col w-1/2">
-            <div className="w-full flex">
-              <div className="flex flex-col w-1/2">
-            <h2 className="iceland text-slate-300 text-lg">NAME</h2>
-            <h1 className="big-shoulders red text-xl font-bold">DIVYA AGRAWAL</h1>
-            </div>
-            <div className="w-1/2 flex flex-col">
-            <h2 className="iceland text-slate-300 text-lg">OCCUPATION</h2>
-            <h1 className="big-shoulders red text-xl font-bold">WEB DEVELOPER</h1>
-            </div>
-            </div>
-            <h2 className="iceland text-slate-300 text-lg">LINKS</h2>
-            <a
-              href="https://github.com/divyaagrawal261"
-              className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit hover:text-black hover-bg-primary"
-            >
-              <h1 className="text-xl">GITHUB</h1>
-              <img src={Github} alt="Github Logo" className="h-6" />
-            </a>
-            <a href="https://github.com/divyaagrawal261" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
-              <h1 className="text-xl">LINKEDIN</h1>
-              <img src={LinkedIn} alt="LinkedIn Logo" className="h-6" />
-            </a>
-            <a href="https://github.com/divyaagrawal261" className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black">
-              <h1 className="text-xl">RESUME</h1>
-            </a>
-          </div>
-        </div>
-      </>
-    )
-}
+      </Tilt>
+      <div className="detailsContainer flex flex-col sm:w-1/2 md:w-full">
+        <h2 className="iceland text-slate-300 text-lg">NAME</h2>
+        <h1 className="big-shoulders red text-xl font-bold">DIVYA AGRAWAL</h1>
+        <h2 className="iceland text-slate-300 text-lg">OCCUPATION</h2>
+        <h1 className="big-shoulders red text-xl font-bold">WEB DEVELOPER</h1>
+        <h2 className="iceland text-slate-300 text-lg">LINKS</h2>
+        <a
+          href="https://github.com/divyaagrawal261"
+          className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit hover:text-black hover-bg-primary"
+        >
+          <h1 className="text-xl">GITHUB</h1>
+          <img src={Github} alt="Github Logo" className="h-6" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/divya-agrawal-3b710825a/"
+          className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black"
+        >
+          <h1 className="text-xl">LINKEDIN</h1>
+          <img src={LinkedIn} alt="LinkedIn Logo" className="h-6" />
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1v7O_DXTSl-AtcAi4LPgEV5a4Jxhs0BMZ/view"
+          className="big-shoulders border-primary border px-1 flex justify-between items-center red h-fit mt-1 hover-bg-primary hover:text-black"
+        >
+          <h1 className="text-xl">RESUME</h1>
+        </a>
+      </div>
+    </div>
+  );
+};
 
 export const RightSide = () =>{
   const dispatch=useDispatch();
