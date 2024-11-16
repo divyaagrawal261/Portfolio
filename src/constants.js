@@ -8,6 +8,11 @@ import Portfolio from "../src/assets/portfolio.png";
 export const experiences = [
     {
         role:"WEB DEVELOPER",
+        company:"MeetX",
+        tenure:"JUL 2024 - OCT 2024"
+    },
+    {
+        role:"WEB DEVELOPER",
         company:"Luco Homes",
         tenure:"MAR 2024"
     },

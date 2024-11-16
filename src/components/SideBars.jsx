@@ -5,6 +5,7 @@ import LinkedIn from "../assets/linkedin.png";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "../redux/index";
+import Profile from "../assets/Divya.jpeg";
 
 export const LeftSide = () =>{
      return(
@@ -22,7 +23,7 @@ export const LeftSide = () =>{
             <div className="innerBox border border-[#ffffff38] h-full">
               <div className="h-full p-2">
                 <img
-                  src="https://media.licdn.com/dms/image/D4D03AQHnFQgz7KL-Ew/profile-displayphoto-shrink_200_200/0/1676355303240?e=1724284800&v=beta&t=zxnPJ4qatS8ws2gx3bHPF4-_RXjTGRYXX4dtqPlGZwY"
+                  src={Profile}
                   alt="Profile"
                 />
               </div>
@@ -63,7 +64,7 @@ export const LeftSide = () =>{
             <div className="innerBox border border-[#ffffff38] h-full">
               <div className="h-full p-2">
                 <img
-                  src="https://media.licdn.com/dms/image/D4D03AQHnFQgz7KL-Ew/profile-displayphoto-shrink_200_200/0/1676355303240?e=1724284800&v=beta&t=zxnPJ4qatS8ws2gx3bHPF4-_RXjTGRYXX4dtqPlGZwY"
+                  src={Profile}
                   alt="Profile"
                 />
               </div>
