@@ -9,7 +9,7 @@ export const experiences = [
     {
         role:"WEB DEVELOPER",
         company:"MeetX",
-        tenure:"JUL 2024 - OCT 2024"
+        tenure:"JUL - OCT 2024 "
     },
     {
         role:"WEB DEVELOPER",
