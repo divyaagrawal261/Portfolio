@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Tilt from "react-parallax-tilt";
 import Github from "../assets/github.png";
 import LinkedIn from "../assets/linkedin.png";
