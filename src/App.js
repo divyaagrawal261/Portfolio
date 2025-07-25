@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import './App.css';
 import Mask from './components/Mask';
+import HeroSection from './components/HeroSection';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -15,6 +17,12 @@ function App() {
   return (
     <div className="App">
       {showMask && <Mask />}
+      {!showMask && 
+      <>
+      <NavBar/>
+      <HeroSection/>
+      </>
+      }
     </div>
   );
 }

@@ -18,3 +18,22 @@
     opacity: 1;
   }  
 }
+.ham{
+  animation-timing-function: ease-in-out;
+}
+
+
+.futuristic-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: inherit;
+  padding: 20px;
+  /* -webkit-mask: linear-gradient(#fff 0 0) content-box,  */
+    /* linear-gradient(#fff 0 0); */
+  /* -webkit-mask-composite: xor; */
+  /* mask-composite: exclude; */
+  z-index: -1; /* behind main content */
+  pointer-events: none;
+  border-radius: inherit;
+}
