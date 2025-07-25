@@ -49,7 +49,7 @@ const FuturisticMenu = () => {
       </div>
 
       {open && (
-        <div className="fixed z-50 h-screen w-screen flex items-center justify-center">
+        <div className="fixed z-50 h-screen w-screen flex items-center justify-center bg-black/50">
           <div 
             className={`fixed ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}
             style={{
@@ -74,7 +74,7 @@ const FuturisticMenu = () => {
             >
               <polygon
                 points="0,0 12,0 18,6 88,6 94,12 100,18 100,65 94,71 94,100 6,100 0,94 0,55 6,49 6,22 0,16"
-                fill="none"
+                fill="#040303E5"
                 stroke="#e48c1e"
                 strokeWidth="2"
                 vectorEffect="non-scaling-stroke"

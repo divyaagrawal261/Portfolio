@@ -2,6 +2,15 @@
   font-family: 'Sakana';
   src: url(./assets/sakana/Sakana.ttf);
 }
+
+* {
+  cursor: url('./assets/cursor.png'), auto !important;
+}
+
+body {
+  cursor: url('./assets/cursor.png'), auto !important;
+}
+
 .font-sakana {
   font-family: 'Sakana', sans-serif;
 }
