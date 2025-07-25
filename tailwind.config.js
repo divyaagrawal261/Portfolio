@@ -11,6 +11,7 @@ module.exports = {
         'custom-red': '#a2191e',
         'neon-cyan': '#00f0ff',
         'neon-pink': '#ff00ff',
+        'custom-yellow': '#e48c1e',
       },
       animation: {
         fadeIn: "fadeIn 0.4s ease-out",
