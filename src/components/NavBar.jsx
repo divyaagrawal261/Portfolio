@@ -7,77 +7,6 @@ import hoverSound from "../assets/sounds/hover.wav";
 import clickSound from "../assets/sounds/click.mp3";
 import DialogBox from "./DialogBox";
 
-const HealthBar = () => {
-  const [health, setHealth] = useState(100);
-  const [maxHealth] = useState(100);
-
-  // Simulate health changes (you can replace this with your actual health logic)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHealth(prev => {
-        const change = Math.random() > 0.5 ? 5 : -3;
-        const newHealth = Math.max(0, Math.min(maxHealth, prev + change));
-        return newHealth;
-      });
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [maxHealth]);
-
-  const healthPercentage = (health / maxHealth) * 100;
-  const healthColor = health > 60 ? '#00ff00' : health > 30 ? '#ffff00' : '#ff0000';
-
-  return (
-    <div className="relative w-64 h-8">
-      <svg
-        className="w-full h-full"
-        viewBox="0 0 264 32"
-        preserveAspectRatio="none"
-      >
-        {/* Background/Border */}
-        <polygon
-          points="0,0 32,0 40,8 224,8 232,0 264,0 264,24 232,32 32,32 0,24"
-          fill="#040303E5"
-          stroke="#e48c1e"
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-        />
-        
-        {/* Health Fill */}
-        <polygon
-          points={`4,4 32,4 38,8 ${32 + (healthPercentage/100) * 192},8 ${Math.min(232, 32 + (healthPercentage/100) * 192)},${healthPercentage > 95 ? 4 : 8} ${Math.min(260, 32 + (healthPercentage/100) * 200)},${healthPercentage > 95 ? 4 : 8} ${Math.min(260, 32 + (healthPercentage/100) * 200)},${healthPercentage > 95 ? 20 : 24} ${Math.min(232, 32 + (healthPercentage/100) * 192)},28 32,28 4,20`}
-          fill={healthColor}
-          opacity="0.8"
-        />
-        
-        {/* Health Text */}
-        <text
-          x="132"
-          y="20"
-          textAnchor="middle"
-          fill="#ffffff"
-          fontSize="12"
-          fontFamily="monospace"
-          fontWeight="bold"
-        >
-          {Math.round(health)}/{maxHealth} HP
-        </text>
-      </svg>
-      
-      {/* Animated glow effect for low health */}
-      {health < 30 && (
-        <div 
-          className="absolute inset-0 animate-pulse"
-          style={{
-            background: 'radial-gradient(ellipse, rgba(255,0,0,0.3) 0%, transparent 70%)',
-            filter: 'blur(4px)'
-          }}
-        />
-      )}
-    </div>
-  );
-};
-
 const FuturisticMenu = ({ audioEnabled, setAudioEnabled }) => {
   const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -151,9 +80,37 @@ const FuturisticMenu = ({ audioEnabled, setAudioEnabled }) => {
           {open && <IoClose fill="#040303" stroke="#040303" strokeWidth={1}/>}
         </div>
       </div>
+      <div className="fixed right-4 p-4 z-[60]">
+        <h1 
+          className="font-sakana text-4xl text-custom-yellow relative overflow-hidden hover:text-center transition-all duration-300 cursor-pointer hover:uppercase hover:font-extrabold px-8"
+          style={{
+            clipPath: "none",
+            transition: "clip-path 0.6s ease-in-out, color 0.3s ease-in-out",
+            background: `linear-gradient(90deg, #e48c1e 0%, #e48c1e 100%)`,
+            backgroundSize: "0% 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "left center",
+            color: '#e48c1e'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.clipPath = "polygon(10% 0%, 100% 0%, 90% 100%,0% 100%)";
+            e.target.style.backgroundSize = "100% 100%";
+            e.target.style.color = "#000000";
+            e.target.style.transition = "clip-path 0.6s ease-in-out, background-size 0.4s ease-in-out, color 0.3s ease-in-out 0.2s";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.clipPath = "none";
+            e.target.style.backgroundSize = "0% 100%";
+            e.target.style.color = '#e48c1e';
+            e.target.style.transition = "clip-path 0.6s ease-in-out, background-size 0.4s ease-in-out, color 0.2s ease-in-out";
+          }}
+        >
+          Divya Agrawal
+        </h1>
+      </div>
 
       {open && (
-        <div className={`fixed z-50 h-screen w-screen flex items-center justify-center bg-gradient-to-br from-black via-black/50 to-custom-yellow/20 ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}>
+        <div className={`fixed z-50 h-screen w-screen flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black via-black/50 to-custom-yellow/20 ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}>
           <div 
             className={`fixed ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}
             style={{
@@ -215,7 +172,7 @@ const FuturisticMenu = ({ audioEnabled, setAudioEnabled }) => {
                     }}
                     onMouseEnter={(e) => {
                       if (audioEnabled) playSound();
-                      e.target.style.clipPath = "polygon(10% 0%, 90% 0%, 100% 50%, 90% 90%,10% 100%, 0% 50%)";
+                      e.target.style.clipPath = "polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%,10% 100%, 0% 50%)";
                       e.target.style.backgroundSize = "100% 100%";
                       e.target.style.color = "#000000";
                       e.target.style.transition = "clip-path 0.6s ease-in-out, background-size 0.4s ease-in-out, color 0.3s ease-in-out 0.2s";
@@ -241,12 +198,7 @@ const FuturisticMenu = ({ audioEnabled, setAudioEnabled }) => {
           </div>
         </div>
       )}
-      {/* Health Bar Component */}
-      <div className="fixed bottom-4 left-4 z-40">
-        <HealthBar />
-      </div>
 
-      {/* Sound Permission Dialog */}
       <DialogBox
         isVisible={showSoundDialog}
         onAllow={handleSoundAllow}

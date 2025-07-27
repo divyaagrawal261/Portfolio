@@ -42,7 +42,7 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
     reset: true,
   }
   return (
-    <div className="z-30 h-screen w-screen flex items-center justify-center bg-black/0">
+    <div className="z-30 flex flex-wrap items-center justify-center">
           <div 
             className=""
             style={{
@@ -61,7 +61,7 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
             `}</style>
             <Tilt 
               options={defaultOptions} 
-              className="w-72 p-5 text-custom-yellow font-mono transition-all duration-300 pb-1"
+              className="w-72 text-custom-yellow font-mono transition-all duration-300"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -71,35 +71,43 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
               preserveAspectRatio="none"
             >
               <polygon
-                points="0,0 12,0 18,6 88,6 94,12 100,18 100,65 94,71 94,100 6,100 0,94 0,55 6,49 6,22 0,16"
+                points="5,0 20,0 25, 5 95, 5 100,10 100, 20 95,25 95,50 100,55 100,74 100,95 100,95 95,100 5,100 0,95 0,5"
                 fill="#040303E5"
                 fillOpacity="0.5"
                 stroke="#e48c1e"
                 strokeWidth="2"
-                vectorEffect="non-scaling-stroke"
               />
             </svg>
 
+            {/* Background blur layer */}
             <div
-              className="relative p-5 transition-all duration-300 scale-100 hover:scale-[1.01] futuristic-box"
+              className="absolute inset-0 backdrop-blur-sm pointer-events-none"
+              style={{
+                clipPath:
+                  "polygon(4% 0.75%, 21% 0.75%, 25% 5%, 95% 5%, 99% 9%, 99% 21%, 95% 25%, 95% 50%, 99% 54%, 99% 96%, 96% 99%, 4% 99%, 1% 96%, 1% 4%)",
+              }}
+            />
+
+            <div
+              className="relative p-4 pr-6 pt-8 transition-all duration-300 scale-100 hover:scale-[1.01] futuristic-box"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-            //   style={{
-            //     clipPath:
-            //       "polygon(0% 0%, 12% 0%, 18% 6%, 88% 6%, 94% 12%, 100% 18%, 100% 65%, 94% 71%, 94% 100%, 6% 100%, 0% 94%, 0% 55%, 6% 49%, 6% 22%, 0% 16%)",
-            //   }}
+              style={{
+                clipPath:
+                  "polygon(5% 0%, 20% 0%, 25% 5%, 95% 5%, 100% 10%, 100% 20%, 95% 25%, 95% 50%, 100% 55%, 100% 74%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)",
+              }}
             >
-              <div className="space-y-4">
+              <div className="">
                 {videoSrc ? (
                   /* Single Video Display */
-                  <div className="relative overflow-hidden rounded-lg border-custom-yellow hover:border-white transition-all duration-300">
+                  <div className="relative overflow-hidden transition-all duration-300 rounded-lg">
                     <video 
                       ref={videoRef}
                       src={videoSrc}
                       autoPlay
                       loop
                       muted
-                      className="w-full aspect-[3/5] object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full aspect-[3/5] object-cover hover:scale-110 transition-transform duration-300"
                       style={{
                         filter: "brightness(0.8) contrast(1.2)"
                       }}
