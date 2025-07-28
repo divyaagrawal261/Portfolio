@@ -52,4 +52,7 @@ body {
   pointer-events: none;
   border-radius: inherit;
 }
-/* style={{backgroundImage:"url(/bg4.jpg)", backgroundSize: 'cover', backgroundPosition: 'top center', backgroundBlendMode:"multiply"}} */
+
+::-webkit-scrollbar{
+  display: none;
+}
