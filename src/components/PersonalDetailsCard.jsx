@@ -1,17 +1,19 @@
-import React from 'react'
-import { Tilt } from 'react-tilt'
+import React, { useRef } from 'react'
 import useSound from "use-sound";
 import hoverSound from "../assets/sounds/hover.wav";
 import photograph from "../assets/Divya.jpeg";
 
 function PersonalDetailsCard({ 
-  name = "Divya Agrawal", 
-  title = "Full Stack Developer", 
+  name = "Divya Agrawal",
+  title = "Developer & Cloud Enthusiast", 
   location = "India",
   email = "divya@example.com",
   phone = "+91 XXXXX XXXXX",
-  experience = "3+ Years",
-  audioEnabled = false 
+  education = "IIIT Gwalior",
+  audioEnabled = false, 
+  className = "",
+  showAvatar = true,
+  technologies = ['React', 'Node.js', 'Python', 'TypeScript']
 }) {
   const [playHoverSound] = useSound(hoverSound, { 
     volume: 0.5,
@@ -29,123 +31,156 @@ function PersonalDetailsCard({
     }
   };
 
-  const defaultOptions = {
-    reverse: false,
-    max: 45,
-    perspective: 1500,
-    scale: 1.2,
-    speed: 1500,
-    transition: true,
-    axis: null,
-    reset: true,
-  }
-
   return (
-    <div className="z-30 flex flex-wrap items-center justify-center w-fit">
+    <div 
+      className={`w-full h-screen z-30 text-custom-yellow font-mono transition-all duration-300 backdrop-blur-sm ${className}`}
+      onMouseEnter={handleMouseEnter}
+    >
+      
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-10"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          {/* Glass border gradient */}
+          <linearGradient id="personalGlassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(228, 140, 30, 0.8)" />
+            <stop offset="50%" stopColor="rgba(228, 140, 30, 0.4)" />
+            <stop offset="100%" stopColor="rgba(228, 140, 30, 0.6)" />
+          </linearGradient>
+          
+          {/* Glass blur filter */}
+          <filter id="personalGlassBlur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+            <feOffset dx="0" dy="1" result="offset"/>
+            <feFlood floodColor="rgba(255,255,255,0.3)"/>
+            <feComposite in2="offset" operator="in"/>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          
+          {/* Inner glow */}
+          <filter id="personalInnerGlow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Main glass shape */}
+        <polygon
+          points="0,0 12,0 18,0 100, 0 100,100 6,100 0,94 0,55 6,49 6,22 0,16"
+          fill="rgba(0, 0, 0, 0.1)"
+          stroke="url(#personalGlassBorder)"
+          strokeWidth="1.5"
+          vectorEffect="non-scaling-stroke"
+          filter="url(#personalGlassBlur)"
+          className="transition-all duration-300 hover:fill-opacity-80"
+        />
+        
+        {/* Glass highlight */}
+        <polygon
+          points="0,0 12,0 18,0 100, 0 100,30 80,25 60,20 40,15 20,10 0,5"
+          fill="rgba(255, 255, 255, 0.15)"
+          opacity="0.3"
+          className="transition-opacity duration-300 hover:opacity-80"
+        />
+        
+        {/* Subtle inner border */}
+        <polygon
+          points="2,2 12,2 16,2 98, 2 98,98 8,98 2,92 2,57 8,51 8,24 2,18"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.2)"
+          strokeWidth="0.5"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+      
+      {/* Personal Details Content Container */}
       <div 
-        className=""
+        className="relative w-full h-full overflow-hidden flex items-center justify-center"
         style={{
-          animation: 'float 3s ease-in-out infinite'
+          clipPath: "polygon(0% 0%, 12% 0%, 18% 0%, 100% 0%, 100% 100%, 6% 100%, 0% 94%, 0% 55%, 6% 49%, 6% 22%, 0% 16%)"
         }}
       >
-        <style jsx>{`
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-        `}</style>
-        <Tilt 
-          options={defaultOptions} 
-          className="w-72 text-custom-yellow font-mono transition-all duration-300"
-          onMouseEnter={handleMouseEnter}
-        >
-          <svg
-            className="absolute inset-0 w-full h-full z-[-1] pointer-events-none"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <polygon
-              points="5,0 20,0 25, 5 95, 5 100,10 100, 20 95,25 95,50 100,55 100,74 100,95 100,95 95,100 5,100 0,95 0,5"
-              fill="#040303E5"
-              fillOpacity="0.5"
-              stroke="#e48c1e"
-              strokeWidth="2"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-
-          <div
-            className="absolute inset-0 backdrop-blur-sm pointer-events-none"
-            style={{
-              clipPath:
-                "polygon(5% 0%, 20% 0%, 25% 5%, 95% 5%, 100% 10%, 100% 20%, 95% 25%, 95% 50%, 100% 55%, 100% 74%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)",
-            }}
-          />
-
-          <div
-            className="relative p-4 transition-all duration-300 scale-100 hover:scale-[1.01] futuristic-box"
-            style={{
-              clipPath:
-                "polygon(5% 0%, 20% 0%, 25% 5%, 95% 5%, 100% 10%, 100% 20%, 95% 25%, 95% 50%, 100% 55%, 100% 74%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)",
-            }}
-          >
-            <div className="space-y-4 flex flex-col">
-                <img 
-                  src={photograph} 
-                  alt="Divya Agrawal" 
-                  className='mr-2 mt-4'
-                  style={{
-                    clipPath: "inset(6px 6px 6px 6px round 8px)",
-                    borderRadius: "8px"
-                  }}
-                />
-              {/* Header Section */}
-              <div className="text-center border-b border-custom-yellow/30 pb-3">
-                <h2 className="text-custom-yellow font-sakana text-xl font-bold mb-1">
-                  {name}
-                </h2>
-                <p className="text-white/80 text-sm font-medium">
-                  {title}
-                </p>
-              </div>
-
-              {/* Personal Details */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-xs uppercase tracking-wider">Location</span>
-                  <span className="text-custom-yellow text-sm font-medium">{location}</span>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-xs uppercase tracking-wider">Experience</span>
-                  <span className="text-custom-yellow text-sm font-medium">{experience}</span>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-xs uppercase tracking-wider">Email</span>
-                  <span className="text-custom-yellow text-sm font-medium truncate">{email}</span>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-xs uppercase tracking-wider">Phone</span>
-                  <span className="text-custom-yellow text-sm font-medium">{phone}</span>
+        <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-black/40 via-black/60 to-black/80">
+          {/* Personal Details Content */}
+          <div className="text-center ">
+            {/* Avatar Section */}
+            {showAvatar && (
+              <div className="flex justify-center mb-4">
+                <div className="w-40 h-40 rounded-lg border-2 border-custom-yellow/50 overflow-hidden bg-gradient-to-br from-custom-yellow/20 to-transparent" style={{ clipPath: "inset(6px 6px 6px 6px round 8px)" }}>
+                  <img 
+                    src={photograph} 
+                    alt={name} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-
-              {/* Status Indicator */}
-              <div className="flex items-center justify-center pt-2">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 text-xs font-medium">Available for Work</span>
-                </div>
+            )}
+            
+            {/* Name and Title */}
+            <div className="border-b border-custom-yellow/30 pb-3 mb-4">
+              <h3 className="text-custom-yellow font-sakana text-xl font-bold mb-1">
+                {name}
+              </h3>
+              <p className="text-white/80 text-sm">
+                {title}
+              </p>
+            </div>
+            
+            {/* Details Grid */}
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-white/60">Location:</span>
+                <span className="text-custom-yellow">{location}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-white/60">Education:</span>
+                <span className="text-custom-yellow">{education}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-white/60">Email:</span>
+                <span className="text-custom-yellow text-xs truncate max-w-32">{email}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-white/60">Phone:</span>
+                <span className="text-custom-yellow">{phone}</span>
+              </div>
+            </div>
+            
+            {/* Status Indicator */}
+            <div className="flex items-center justify-center pt-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400 text-sm font-medium">Available for Work</span>
+              </div>
+            </div>
+            
+            {/* Skills/Technologies Preview */}
+            <div className="pt-4 border-t border-custom-yellow/20">
+              <p className="text-white/60 text-xs mb-2">Technologies:</p>
+              <div className="flex flex-wrap gap-1 justify-center">
+                {technologies.map((tech, index) => (
+                  <span 
+                    key={index}
+                    className="px-2 py-1 bg-custom-yellow/20 text-custom-yellow text-xs rounded border border-custom-yellow/30"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
-        </Tilt>
+          
+          {/* Glass overlay effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-custom-yellow/5 via-transparent to-white/5 pointer-events-none" />
+        </div>
       </div>
     </div>
   )

@@ -46,30 +46,27 @@ function HeroSection({ audioEnabled }) {
     //     </div>
     //   </div>
     // </div>
-    <div className='grid grid-cols-3 overflow-hidden' >
-      {/* <div className="w-80 h-96"> */}
-      <Placholder 
-        projectName="Portfolio Card"
+    <div className='grid grid-cols-3 overflow-hidden ml-10' >
+      {/* Personal Details Card */}
+      <PersonalDetailsCard 
         audioEnabled={audioEnabled}
         className="z-[29]"
       />
-        <Placholder 
-          videoSrc={vid1}
-          projectName="Project Alpha"
-          audioEnabled={audioEnabled}
-          className="-ml-7 z-[30] 2xl:-ml-10"
-        />
-      {/* </div> */}
-      {/* <div className="w-80 h-96"> */}
-        <Placholder 
-          videoSrc={vid2}
-          projectName="Project Beta"
-          audioEnabled={audioEnabled}
-          className="-ml-14 z-[30] 2xl:-ml-20"
-        />
-      {/* </div> */}
-      {/* <div className="w-80 h-96"> */}
-      {/* </div> */}
+      
+      {/* Video Project Cards */}
+      <Placholder 
+        videoSrc={vid1}
+        projectName="Project Alpha"
+        audioEnabled={audioEnabled}
+        className="-ml-7 z-[30] 2xl:-ml-10"
+      />
+      
+      <Placholder 
+        videoSrc={vid2}
+        projectName="Project Beta"
+        audioEnabled={audioEnabled}
+        className="-ml-14 z-[30] 2xl:-ml-20"
+      />
     </div>
   )
 }

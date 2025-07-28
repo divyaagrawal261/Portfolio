@@ -2,7 +2,12 @@ import React, { useRef } from 'react'
 import useSound from "use-sound";
 import hoverSound from "../assets/sounds/hover.wav";
 
-function Placholder({ videoSrc, projectName = "Project", audioEnabled = false, className = "" }) {
+function Placholder({ 
+  videoSrc, 
+  projectName = "Project", 
+  audioEnabled = false, 
+  className = ""
+}) {
   const videoRef = useRef(null);
   const [playHoverSound] = useSound(hoverSound, { 
     volume: 0.5,
@@ -149,8 +154,9 @@ function Placholder({ videoSrc, projectName = "Project", audioEnabled = false, c
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-custom-yellow/5 pointer-events-none" />
                   </div>
                 ) : (
-                  /* Default Content */
+                  /* Default Content - Generic */
                   <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-black/40 via-black/60 to-black/80">
+                    {/* Generic Content */}
                     <div className="text-center z-40">
                       <h3 className="text-custom-yellow font-sakana text-xl font-bold mb-2">
                         Glass Card
