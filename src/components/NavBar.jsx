@@ -110,7 +110,7 @@ const FuturisticMenu = ({ audioEnabled, setAudioEnabled }) => {
       </div>
 
       {open && (
-        <div className={`fixed z-50 h-screen w-screen flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black via-black/50 to-custom-yellow/20 ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}>
+        <div className={`fixed z-50 h-screen overflow-hidden w-screen flex items-center justify-center backdrop-blur-sm bg-gradient-to-br from-black via-black/50 to-custom-yellow/20 ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}>
           <div 
             className={`fixed ${isVisible ? "animate-fadeIn" : "animate-fadeOut"}`}
             style={{
