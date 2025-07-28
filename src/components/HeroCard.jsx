@@ -44,7 +44,7 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
   return (
     <div className="z-30 flex flex-wrap items-center justify-center">
           <div 
-            className=""
+            className="w-full"
             style={{
               animation: 'float 3s ease-in-out infinite'
             }}
@@ -61,7 +61,7 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
             `}</style>
             <Tilt 
               options={defaultOptions} 
-              className="w-72 text-custom-yellow font-mono transition-all duration-300"
+              className="text-custom-yellow font-mono transition-all duration-300"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -100,7 +100,7 @@ function HeroCard({ videoSrc, projectName = "Project", className = "", audioEnab
               <div className="">
                 {videoSrc ? (
                   /* Single Video Display */
-                  <div className="relative overflow-hidden transition-all duration-300 rounded-lg">
+                  <div className="min-w-72 w-72 xl:max-w-96 relative overflow-hidden transition-all duration-300 rounded-lg">
                     <video 
                       ref={videoRef}
                       src={videoSrc}
