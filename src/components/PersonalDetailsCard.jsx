@@ -1,14 +1,15 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import useSound from "use-sound";
 import hoverSound from "../assets/sounds/hover.wav";
 import photograph from "../assets/Divya.jpeg";
 
 function PersonalDetailsCard({ 
   name = "Divya Agrawal",
-  title = "Developer & Cloud Enthusiast", 
+  title = "Developer", 
+  subtitle = "Cloud Enthusiast",
   location = "India",
-  email = "divya@example.com",
-  phone = "+91 XXXXX XXXXX",
+  email = "divyaagrawal0747@gmail.com",
+  phone = "+91 82738 01346",
   education = "IIIT Gwalior",
   audioEnabled = false, 
   className = "",
@@ -113,7 +114,7 @@ function PersonalDetailsCard({
           <div className="text-center ">
             {/* Avatar Section */}
             {showAvatar && (
-              <div className="flex justify-center mb-4">
+              <div className="lg:flex hidden justify-center mb-4">
                 <div className="w-40 h-40 rounded-lg border-2 border-custom-yellow/50 overflow-hidden bg-gradient-to-br from-custom-yellow/20 to-transparent" style={{ clipPath: "inset(6px 6px 6px 6px round 8px)" }}>
                   <img 
                     src={photograph} 
@@ -132,23 +133,26 @@ function PersonalDetailsCard({
               <p className="text-white/80 text-sm">
                 {title}
               </p>
+              <p className="text-white/80 text-sm">
+                {subtitle}
+              </p>
             </div>
             
             {/* Details Grid */}
             <div className="space-y-3 text-sm">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center lg:justify-between items-center">
                 <span className="text-white/60">Location:</span>
                 <span className="text-custom-yellow">{location}</span>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center lg:justify-between items-center">
                 <span className="text-white/60">Education:</span>
                 <span className="text-custom-yellow">{education}</span>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center lg:justify-between items-center">
                 <span className="text-white/60">Email:</span>
                 <span className="text-custom-yellow text-xs truncate max-w-32">{email}</span>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center lg:justify-between">
                 <span className="text-white/60">Phone:</span>
                 <span className="text-custom-yellow">{phone}</span>
               </div>
@@ -163,7 +167,7 @@ function PersonalDetailsCard({
             </div>
             
             {/* Skills/Technologies Preview */}
-            <div className="pt-4 border-t border-custom-yellow/20">
+            {/* <div className="pt-4 border-t border-custom-yellow/20">
               <p className="text-white/60 text-xs mb-2">Technologies:</p>
               <div className="flex flex-wrap gap-1 justify-center">
                 {technologies.map((tech, index) => (
@@ -175,7 +179,7 @@ function PersonalDetailsCard({
                   </span>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Glass overlay effect */}

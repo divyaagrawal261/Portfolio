@@ -146,7 +146,7 @@ function Placholder({
                     <div className="absolute inset-0 bg-gradient-to-r from-custom-yellow/10 via-transparent to-custom-yellow/10 pointer-events-none" />
                     
                     {/* Project name overlay */}
-                    <div className="absolute bottom-4 left-4 text-custom-yellow font-sakana text-lg font-bold z-20">
+                    <div className="absolute bottom-4 pl-10 text-custom-yellow font-sakana text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold z-20">
                       {projectName}
                     </div>
                     
